@@ -1,193 +1,299 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Grégoire Aupet - Présentation professionnelle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: url('https://source.unsplash.com/1600x500/?sports,cycling') no-repeat center/cover;
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-            position: relative;
-        }
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            z-index: 0;
-        }
-        header h1, header p {
-            position: relative;
-            z-index: 1;
-        }
-        nav {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #0077cc;
-        }
-        main {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-        section {
-            margin-bottom: 60px;
-        }
-        h2 {
-            border-bottom: 2px solid #0077cc;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: #0077cc;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #0077cc;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-        }
-        footer {
-            background-color: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9rem;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grégoire Aupet - Présentation professionnelle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #eef2f7;
+      color: #333;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Nouveau style pour images intégrées */
-        .illustration {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-    </style>
+    header {
+      background: linear-gradient(rgba(0,119,204,0.8), rgba(0,119,204,0.8)), url('https://source.unsplash.com/1600x600/?sports,cycling') no-repeat center/cover;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #005ea2;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    nav a:hover, nav a:focus {
+      background-color: #004070;
+      color: #a8d0ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto 60px;
+      padding: 0 15px;
+    }
+
+    section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding: 25px 30px;
+      transition: box-shadow 0.3s ease;
+    }
+    section:hover {
+      box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+    }
+    section img {
+      width: 280px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    section:hover img {
+      transform: scale(1.05);
+    }
+    section div.content {
+      flex: 1;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #0077cc;
+      font-weight: 700;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
+    }
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    ul {
+      padding-left: 20px;
+      font-size: 1.05rem;
+      list-style-type: disc;
+      color: #444;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #0077cc;
+      color: white;
+      font-weight: 700;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,119,204,0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 15px;
+    }
+    .btn:hover, .btn:focus {
+      background-color: #005ea2;
+      box-shadow: 0 7px 20px rgba(0,94,162,0.6);
+    }
+
+    footer {
+      background-color: #1a1a1a;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      section {
+        flex-direction: column;
+        padding: 20px 20px;
+      }
+      section img {
+        width: 100%;
+        height: 220px;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h1>Grégoire Aupet</h1>
-    <p>Étudiant en marketing sportif – Passionné de sports et de challenges</p>
+  <h1>Grégoire Aupet</h1>
+  <p>Étudiant en marketing sportif – Passionné de sports et de challenges</p>
 </header>
 
 <nav>
-    <a href="#presentation">Présentation</a>
-    <a href="#qualites">Qualités</a>
-    <a href="#valeurs">Valeurs</a>
-    <a href="#anecdote">Anecdote</a>
-    <a href="#parcours-scolaire">Parcours scolaire</a>
-    <a href="#diplomes">Diplômes</a>
-    <a href="#activites-sportives">Activités sportives</a>
-    <a href="#fiertes">Fiertés</a>
-    <a href="#contact">Contact</a>
+  <a href="#presentation">Présentation</a>
+  <a href="#qualites">Qualités</a>
+  <a href="#valeurs">Valeurs</a>
+  <a href="#anecdote">Anecdote</a>
+  <a href="#parcours-scolaire">Parcours scolaire</a>
+  <a href="#diplomes">Diplômes</a>
+  <a href="#activites-sportives">Activités sportives</a>
+  <a href="#fiertes">Fiertés</a>
+  <a href="#contact">Contact</a>
 </nav>
 
 <main>
+  <section id="presentation">
+    <img src="https://source.unsplash.com/600x400/?student,sports" alt="Étudiant sportif" />
+    <div class="content">
+      <h2>Brève présentation</h2>
+      <p>
+        Bonjour, je m'appelle <strong>Grégoire Aupet</strong>, j'ai 22 ans et je suis actuellement en troisième année de licence (L3) à l'ILEPS en marketing sportif. Je suis passionné par le sport sous toutes ses formes et j'aime relever de nouveaux défis. Ce site présente mon parcours, mes valeurs et mes passions.
+      </p>
+    </div>
+  </section>
 
-    <section id="presentation">
-        <h2>Brève présentation</h2>
-        <img src="https://source.unsplash.com/1000x300/?student,sport" alt="Étudiant sportif" class="illustration" />
-        <p>
-            Bonjour, je m'appelle <strong>Grégoire Aupet</strong>, j'ai 22 ans et je suis actuellement en troisième année de licence (L3) à l'ILEPS en marketing sportif. Je suis passionné par le sport sous toutes ses formes et j'aime relever de nouveaux défis. Ce site présente mon parcours, mes valeurs et mes passions.
-        </p>
-    </section>
+  <section id="qualites">
+    <img src="https://source.unsplash.com/600x400/?teamwork,people" alt="Qualités humaines" />
+    <div class="content">
+      <h2>Mes principales qualités</h2>
+      <ul>
+        <li>🤗 Empathique</li>
+        <li>🗣️ Sociable</li>
+        <li>🗂️ Organisé</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="qualites">
-        <h2>Mes principales qualités</h2>
-        <img src="https://source.unsplash.com/1000x300/?teamwork,empathy" alt="Qualités humaines" class="illustration" />
-        <ul>
-            <li>🤗 Empathique</li>
-            <li>🗣️ Sociable</li>
-            <li>🗂️ Organisé</li>
-        </ul>
-    </section>
+  <section id="valeurs">
+    <img src="https://source.unsplash.com/600x400/?team,collaboration" alt="Valeurs" />
+    <div class="content">
+      <h2>Mes valeurs</h2>
+      <ul>
+        <li>🤝 Esprit d’équipe</li>
+        <li>⚖️ Sens des responsabilités</li>
+        <li>🎯 Rigoureux</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="valeurs">
-        <h2>Mes valeurs</h2>
-        <img src="https://source.unsplash.com/1000x300/?values,team" alt="Valeurs" class="illustration" />
-        <ul>
-            <li>🤝 Esprit d’équipe</li>
-            <li>⚖️ Sens des responsabilités</li>
-            <li>🎯 Rigoureux</li>
-        </ul>
-    </section>
+  <section id="anecdote">
+    <img src="https://source.unsplash.com/600x400/?cycling,mountain" alt="Cyclisme anecdote" />
+    <div class="content">
+      <h2>Une anecdote qui m’a marqué</h2>
+      <p>
+        Lors de l'étape du Tour édition 2022, alors que je participais à une course cycliste, j'ai eu un accident de la route sur le chemin des Alpes. Malgré cet imprévu, je me suis débrouillé pour arriver au lieu de rendez-vous à temps et j’ai réussi à finir dans le top 10% sur 16 000 participants. Cette expérience m'a appris la résilience et l’importance de garder son calme dans les situations difficiles.
+      </p>
+    </div>
+  </section>
 
-    <section id="anecdote">
-        <h2>Une anecdote qui m’a marqué</h2>
-        <img src="https://source.unsplash.com/1000x300/?cycling,mountains" alt="Cyclisme anecdote" class="illustration" />
-        <p>
-            Lors de l'étape du Tour édition 2022, alors que je participais à une course cycliste, j'ai eu un accident de la route sur le chemin des Alpes. Malgré cet imprévu, je me suis débrouillé pour arriver au lieu de rendez-vous à temps et j’ai réussi à finir dans le top 10% sur 16 000 participants. Cette expérience m'a appris la résilience et l’importance de garder son calme dans les situations difficiles.
-        </p>
-    </section>
+  <section id="parcours-scolaire">
+    <img src="https://source.unsplash.com/600x400/?university,classroom" alt="Parcours scolaire" />
+    <div class="content">
+      <h2>Mon parcours scolaire</h2>
+      <ul>
+        <li><strong>Depuis 2022</strong> – Licence 3 Marketing Sportif, ILEPS</li>
+        <li><strong>2019 - 2022</strong> – Classes préparatoires / autres études (à préciser si tu veux)</li>
+        <li><strong>Avant 2019</strong> – Lycée (nom du lycée si tu veux), spécialité [si tu veux]</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="parcours-scolaire">
-        <h2>Mon parcours scolaire</h2>
-        <img src="https://source.unsplash.com/1000x300/?university,classroom" alt="Parcours scolaire" class="illustration" />
-        <ul>
-            <li><strong>Depuis 2022</strong> – Licence 3 Marketing Sportif, ILEPS</li>
-            <li><strong>2019 - 2022</strong> – Classes préparatoires / autres études (à préciser si tu veux)</li>
-            <li><strong>Avant 2019</strong> – Lycée (nom du lycée si tu veux), spécialité [si tu veux]</li>
-        </ul>
-    </section>
+  <section id="diplomes">
+    <img src="https://source.unsplash.com/600x400/?graduation,certificate" alt="Diplômes" />
+    <div class="content">
+      <h2>Mes diplômes</h2>
+      <ul>
+        <li><strong>2024 (prévu)</strong> – Licence 3 Marketing Sportif, ILEPS</li>
+        <li><strong>2019</strong> – Baccalauréat (préciser série si tu veux)</li>
+        <li><strong>2017</strong> – Brevet des collèges</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="diplomes">
-        <h2>Mes diplômes</h2>
-        <img src="https://source.unsplash.com/1000x300/?graduation,certificate" alt="Diplômes" class="illustration" />
-        <ul>
-            <li><strong>2024 (prévu)</strong> – Licence 3 Marketing Sportif, ILEPS</li>
-            <li><strong>2019</strong> – Baccalauréat (préciser série si tu veux)</li>
-            <li><strong>2017</strong> – Brevet des collèges</li>
-        </ul>
-    </section>
+  <section id="activites-sportives">
+    <img src="https://source.unsplash.com/600x400/?sports,adventure" alt="Activités sportives" />
+    <div class="content">
+      <h2>Parcours & activités sportives</h2>
+      <p>
+        À côté de mes études, je pratique plusieurs sports en compétition et loisir : <strong>cyclisme, golf, escalade</strong> et <strong>parapente</strong>. Ces activités m’apportent discipline, dépassement de soi et équilibre.
+      </p>
+      <ul>
+        <li>🚴‍♂️ Cyclisme en compétition, notamment lors d’événements comme le Tour de France</li>
+        <li>🏌️ Golf pour la concentration et la précision</li>
+        <li>🧗‍♂️ Escalade pour le travail mental et physique</li>
+        <li>🪂 Parapente pour l’aventure et la maîtrise du risque</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="activites-sportives">
-        <h2>Parcours & activités sportives</h2>
-        <img src="https://source.unsplash.com/1000x300/?sports,adventure" alt="Activités sportives" class="illustration" />
-        <p>
-            À côté de mes études, je pratique plusieurs sports en compétition et loisir : <strong>cyclisme, golf, escalade</strong> et <strong>parapente</strong>. Ces activités m’apportent discipline, dépassement de soi et équilibre.
-        </p>
-        <ul>
-            <li>🚴‍♂️ Cyclisme en compétition, notamment lors d’événements comme le Tour de France</li>
-            <li>🏌️ Golf pour la concentration et la précision</li>
-            <li>🧗‍♂️ Escalade pour le travail mental et physique</li>
-            <li>🪂 Parapente pour l’aventure et la maîtrise du risque</li>
-        </ul>
-   
-```
+  <section id="fiertes">
+    <img src="https://source.unsplash.com/600x400/?trophy,sports" alt="Fiertés et réussites" />
+    <div class="content">
+      <h2>Mes fiertés et réussites</h2>
+      <ul>
+        <li>🏆 Finir dans le top 10% sur 16 000 participants lors d'une étape du Tour de France en 2022</li>
+        <li>📢 Poursuivre mes études avec la volonté de continuer en Master Management</li>
+        <li>🤝 Allier passion sportive et réussite scolaire</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div style="text-align:center; width: 100%;">
+      <h2>Contact</h2>
+      <p>Tu souhaites me contacter ? Envoie-moi un message :</p>
+      <a class="btn" href="mailto:gregoire.aupet@example.com">📩 Me contacter</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Grégoire Aupet – Tous droits réservés.</p>
+</footer>
+
+</body>
+</html>
