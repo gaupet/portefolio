@@ -1,3 +1,8 @@
+Bien sûr, je t’intègre directement cette version avec le GIF de cyclisme en entête dans ton fichier complet.
+
+Voici ton fichier HTML complet modifié avec le header animé en fond GIF cyclisme :
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,24 +31,32 @@
     }
 
     header {
-      background: linear-gradient(rgba(0,119,204,0.8), rgba(0,119,204,0.8)), url('https://source.unsplash.com/1600x600/?sports,cycling') no-repeat center/cover;
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
       position: relative;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      height: 300px;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 60px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       font-weight: 700;
-      letter-spacing: 2px;
     }
-    header p {
-      font-size: 1.4rem;
-      font-weight: 400;
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif') no-repeat center center / cover;
+      filter: brightness(0.5);
+      z-index: -1;
+      animation: zoomInOut 30s ease-in-out infinite;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     nav {
@@ -249,51 +262,5 @@
       <ul>
         <li><strong>2024 (prévu)</strong> – Licence 3 Marketing Sportif, ILEPS</li>
         <li><strong>2019</strong> – Baccalauréat (préciser série si tu veux)</li>
-        <li><strong>2017</strong> – Brevet des collèges</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="activites-sportives">
-    <img src="https://source.unsplash.com/600x400/?sports,adventure" alt="Activités sportives" />
-    <div class="content">
-      <h2>Parcours & activités sportives</h2>
-      <p>
-        À côté de mes études, je pratique plusieurs sports en compétition et loisir : <strong>cyclisme, golf, escalade</strong> et <strong>parapente</strong>. Ces activités m’apportent discipline, dépassement de soi et équilibre.
-      </p>
-      <ul>
-        <li>🚴‍♂️ Cyclisme en compétition, notamment lors d’événements comme le Tour de France</li>
-        <li>🏌️ Golf pour la concentration et la précision</li>
-        <li>🧗‍♂️ Escalade pour le travail mental et physique</li>
-        <li>🪂 Parapente pour l’aventure et la maîtrise du risque</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="fiertes">
-    <img src="https://source.unsplash.com/600x400/?trophy,sports" alt="Fiertés et réussites" />
-    <div class="content">
-      <h2>Mes fiertés et réussites</h2>
-      <ul>
-        <li>🏆 Finir dans le top 10% sur 16 000 participants lors d'une étape du Tour de France en 2022</li>
-        <li>📢 Poursuivre mes études avec la volonté de continuer en Master Management</li>
-        <li>🤝 Allier passion sportive et réussite scolaire</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div style="text-align:center; width: 100%;">
-      <h2>Contact</h2>
-      <p>Tu souhaites me contacter ? Envoie-moi un message :</p>
-      <a class="btn" href="mailto:gregoire.aupet@example.com">📩 Me contacter</a>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>&copy; 2025 Grégoire Aupet – Tous droits réservés.</p>
-</footer>
-
-</body>
-</html>
+        <li><strong>2017</strong>
+```
